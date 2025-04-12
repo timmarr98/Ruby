@@ -1,0 +1,20 @@
+New Object example: player = Player.new("Player 1")
+
+
+Testing Assertively
+.stub() allows you to override a method and use predfined values 
+
+
+Code blocks
+
+1.upto(9) do |episode|
+    puts "star wars: episode #{episode}"
+end
+
+
+A ruby struct
+
+Snack = Struct.new(:name, :price)
+
+s = Snack.new("pretzels", 2)
+
