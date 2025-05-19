@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Movies n Flix</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
-
+<%= render "layouts/header" %>
   <body>
   <header>
     <nav>
@@ -22,12 +13,6 @@
     </nav>
   </header>
     <%= yield %>
-    <footer> 
-    <p>
-      Copyright &copy; <%= Time.now.year %>
-      <%= link_to "The Pragmatic Studio", "https://something.com/" %>
-
-    </p
-    </footer>
+  <%= render "layouts/footer" %>
   </body>
 </html>
