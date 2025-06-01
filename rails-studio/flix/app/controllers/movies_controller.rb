@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
     def index
-        @movies = Movie.all
+        @movies = Movie.released
     end
 
     def show
@@ -31,8 +31,6 @@ class MoviesController < ApplicationController
         @movie = Movie.find(params[:id])
         @movie.destroy
         redirect_to movies_url, status: :see_other
-
-
     end
 
     private
