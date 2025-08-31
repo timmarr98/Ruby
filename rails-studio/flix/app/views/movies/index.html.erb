@@ -11,6 +11,9 @@
       <h3>
         <%= total_gross(movie) %>
       </h3>
+      <span class = "stars">
+        <%= movie.average_stars %>
+      </span>
       <p>
         <%= truncate(movie.description, length: 150, separator: ' ') %>
       </p>
