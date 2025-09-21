@@ -1,5 +1,12 @@
 class UsersController < ApplicationController
 
+  before_action :require_signin, except: [:new, :create]
+
+  def require_signin
+    unless current_user
+      redirect_to new_session_url, alert: "You must be logged in to access this page!"
+    end
+  end
   def index
     @users  = User.all
   end
