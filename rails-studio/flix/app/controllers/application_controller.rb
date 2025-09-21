@@ -9,6 +9,10 @@ class ApplicationController < ActionController::Base
     current_user == user
   end
 
+  def current_user_admin?
+    current_user && current_user.admin?
+  end
+
   private
   def require_signin
     unless current_user
@@ -17,6 +21,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  helper_method :current_user, :current_user? #Make it accessible to the view pages
+  def require_admin
+    unless current_user_admin?
+      redirect_to root_url, alert: "You must be an admin to do that!"
+    end
+  end
+
+  helper_method :current_user, :current_user?, :current_user_admin? #Make it accessible to the view pages
 
 end
